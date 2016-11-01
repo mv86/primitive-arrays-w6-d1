@@ -7,12 +7,17 @@ public class ToppingTest{
 
   @Before
   public void before() {
-    topping = new Topping("Cheese");
+    topping = new Topping("Cheese", 6);
   }
 
   @Test
   public void hasName(){
     assertEquals("Cheese", topping.getName());
+  }
+
+  @Test
+  public void hasStockAvailable(){
+    assertEquals(6, topping.getStockCount());
   }
 
 }

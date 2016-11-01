@@ -1,1 +1,6 @@
 Create your own class with an internal collection of a different class.
+
+--------------------------------------------------------------------
+
+Read over all the S.O.L.I.D principles and make sure you understand them. We will give out code samples to look at.
+Refactor your last night's homework to use ArrayLists and polymorphism.

@@ -1,15 +1,17 @@
+import java.util.ArrayList;
+
 class Pizza{
 
   private String type;
   private int size;
   private double price;
-  private Topping[] toppings;
+  private ArrayList<Orderable> toppings;
 
   public Pizza(String type, int size, double price){
     this.type = type;
     this.size = size;
     this.price = price;
-    this.toppings = new Topping[7];
+    this.toppings = new ArrayList<Orderable>();
   }
 
   public String getType(){
@@ -25,30 +27,15 @@ class Pizza{
   }
 
   public int countToppings(){
-    int counter = 0;
-    for (Topping topping : toppings) {
-      if (topping != null) {
-        counter++;
-      }
-    }
-    return counter;
+    return this.toppings.size();
   }
 
-  public void addTopping(Topping topping){
-    if (noSpaceLeftOnPizza()){
-      return;
-    }
-    int nextEmptyIndex = countToppings();
-    toppings[nextEmptyIndex] = topping;
+  public void addTopping(Orderable topping){
+    this.toppings.add(topping);
   }
 
   public void removeTopping(){
-    int nextEmptyIndex = countToppings();
-    toppings[(nextEmptyIndex - 1)] = null;
-  }
-
-  public boolean noSpaceLeftOnPizza(){
-    return countToppings() >= toppings.length;
+    this.toppings.remove(this.toppings.size() - 1);
   }
 
 }

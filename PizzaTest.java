@@ -10,8 +10,8 @@ public class PizzaTest{
   @Before
   public void before() {
     pizza = new Pizza("base", 9, 9.99);
-    topping = new Topping("Cheese");
-    topping2 = new Topping("Ham");
+    topping = new Topping("Cheese", 6);
+    topping2 = new Topping("Ham", 7);
   }
 
   @Test
@@ -48,15 +48,6 @@ public class PizzaTest{
     assertEquals(1, pizza.countToppings());
     pizza.removeTopping();
     assertEquals(0, pizza.countToppings());
-  }
-
-  @Test
-  public void cantAddMoreToppingsThanLimit(){
-    for (int i = 0; i < 15 ; i++) {
-      pizza.addTopping(topping);
-    }
-    assertEquals(7, pizza.countToppings());
-    assertEquals(true, pizza.noSpaceLeftOnPizza());
   }
 
   @Test 
