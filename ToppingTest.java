@@ -20,4 +20,9 @@ public class ToppingTest{
     assertEquals(6, topping.getStockCount());
   }
 
+  @Test 
+  public void toppingDecreaseWhenUsed(){
+    assertEquals(5, topping.useTopping());
+  }
+
 }

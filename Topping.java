@@ -16,4 +16,9 @@ class Topping implements Orderable{
     return this.portionsInStock;
   }
 
+  public int useTopping(){
+    this.portionsInStock = (this.portionsInStock -= 1);
+    return this.portionsInStock;
+  }
+
 }
